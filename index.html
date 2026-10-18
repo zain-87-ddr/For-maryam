@@ -1,1 +1,217 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#09060f">
+  <meta name="description" content="A few little questions, just for you.">
+  <title>Just Between Us</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      min-height: 100dvh;
+      overflow: hidden;
+      background:
+        radial-gradient(
+          ellipse at 50% 42%,
+          #29133f 0%,
+          #110b1c 43%,
+          #07060b 100%
+        );
+      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .stars {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .star {
+      position: absolute;
+      color: #cba5ff;
+      opacity: .4;
+      animation: twinkle 3s infinite ease-in-out alternate;
+    }
+
+    @keyframes twinkle {
+      from {
+        opacity: .12;
+        transform: scale(.8);
+      }
+      to {
+        opacity: .7;
+        transform: scale(1.2);
+      }
+    }
+
+    .screen {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 430px;
+      text-align: center;
+      animation: appear 1s ease both;
+    }
+
+    .eyebrow {
+      color: #bda0d9;
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      font-size: clamp(48px, 12vw, 64px);
+      line-height: 1.13;
+      font-weight: 500;
+      letter-spacing: -2px;
+      margin-bottom: 24px;
+    }
+
+    h1 span {
+      color: #c59aff;
+    }
+
+    .intro {
+      color: #c2b7ce;
+      font-size: 14px;
+      line-height: 2;
+      margin: 0 auto 34px;
+      max-width: 310px;
+      font-weight: 400;
+    }
+
+    button {
+      border: 1px solid #8052a9;
+      border-radius: 50px;
+      background: linear-gradient(
+        135deg,
+        #7135a8,
+        #4d2178
+      );
+      color: white;
+      padding: 16px 28px;
+      width: 100%;
+      max-width: 270px;
+      font-size: 11px;
+      letter-spacing: 2px;
+      font-weight: 500;
+      cursor: pointer;
+      box-shadow: 0 0 28px #8b35c526;
+      transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button:active {
+      transform: scale(.97);
+      box-shadow: 0 0 35px #a855f744;
+    }
+
+    .footer {
+      color: #756783;
+      font-size: 9px;
+      letter-spacing: 3px;
+      margin-top: 38px;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 380px) {
+      .eyebrow {
+        letter-spacing: 3px;
+      }
+
+      .intro {
+        font-size: 13px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="stars" id="stars"></div>
+
+  <main class="screen">
+    <p class="eyebrow">JUST BETWEEN US</p>
+
+    <h1>
+      Hey,<br>
+      <span>you.</span>
+    </h1>
+
+    <p class="intro">
+      I have a few things I’ve been wanting to ask you.
+      <br><br>
+      Take your time. There’s no right or wrong answer.
+    </p>
+
+    <button id="startButton">
+      LET'S BEGIN ↗
+    </button>
+
+    <p class="footer">TAKE YOUR TIME</p>
+  </main>
+
+  <script>
+    const stars = document.getElementById("stars");
+
+    for (let i = 0; i < 45; i++) {
+      const star = document.createElement("span");
+
+      star.className = "star";
+      star.textContent = Math.random() > 0.5 ? "✦" : "·";
+      star.style.left = Math.random() * 100 + "%";
+      star.style.top = Math.random() * 100 + "%";
+      star.style.fontSize = (8 + Math.random() * 12) + "px";
+      star.style.animationDelay = Math.random() * 3 + "s";
+
+      stars.appendChild(star);
+    }
+
+    document
+      .getElementById("startButton")
+      .addEventListener("click", () => {
+        alert(
+          "We're just getting started. ✨"
+        );
+      });
+  </script>
+</body>
+</html>
