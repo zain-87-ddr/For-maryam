@@ -2,216 +2,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#09060f">
-  <meta name="description" content="A few little questions, just for you.">
-  <title>Just Between Us</title>
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      min-height: 100vh;
-      min-height: 100dvh;
-      overflow: hidden;
-      background:
-        radial-gradient(
-          ellipse at 50% 42%,
-          #29133f 0%,
-          #110b1c 43%,
-          #07060b 100%
-        );
-      color: #fff;
-      font-family: -apple-system, BlinkMacSystemFont,
-        "Segoe UI", sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-    }
-
-    .stars {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      overflow: hidden;
-    }
-
-    .star {
-      position: absolute;
-      color: #cba5ff;
-      opacity: .4;
-      animation: twinkle 3s infinite ease-in-out alternate;
-    }
-
-    @keyframes twinkle {
-      from {
-        opacity: .12;
-        transform: scale(.8);
-      }
-      to {
-        opacity: .7;
-        transform: scale(1.2);
-      }
-    }
-
-    .screen {
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      max-width: 430px;
-      text-align: center;
-      animation: appear 1s ease both;
-    }
-
-    .eyebrow {
-      color: #bda0d9;
-      font-size: 10px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      margin-bottom: 28px;
-    }
-
-    h1 {
-      font-size: clamp(48px, 12vw, 64px);
-      line-height: 1.13;
-      font-weight: 500;
-      letter-spacing: -2px;
-      margin-bottom: 24px;
-    }
-
-    h1 span {
-      color: #c59aff;
-    }
-
-    .intro {
-      color: #c2b7ce;
-      font-size: 14px;
-      line-height: 2;
-      margin: 0 auto 34px;
-      max-width: 310px;
-      font-weight: 400;
-    }
-
-    button {
-      border: 1px solid #8052a9;
-      border-radius: 50px;
-      background: linear-gradient(
-        135deg,
-        #7135a8,
-        #4d2178
-      );
-      color: white;
-      padding: 16px 28px;
-      width: 100%;
-      max-width: 270px;
-      font-size: 11px;
-      letter-spacing: 2px;
-      font-weight: 500;
-      cursor: pointer;
-      box-shadow: 0 0 28px #8b35c526;
-      transition:
-        transform .2s ease,
-        box-shadow .2s ease;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    button:active {
-      transform: scale(.97);
-      box-shadow: 0 0 35px #a855f744;
-    }
-
-    .footer {
-      color: #756783;
-      font-size: 9px;
-      letter-spacing: 3px;
-      margin-top: 38px;
-    }
-
-    @keyframes appear {
-      from {
-        opacity: 0;
-        transform: translateY(16px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @media (max-width: 380px) {
-      .eyebrow {
-        letter-spacing: 3px;
-      }
-
-      .intro {
-        font-size: 13px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        animation-duration: .01ms !important;
-        transition-duration: .01ms !important;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090611">
+<title>Just Between Us</title>
+<style>
+:root{--bg:#090611;--panel:#191127;--text:#f7f1ff;--muted:#b8abc9;--purple:#c49aff;--line:#49345e}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;min-height:100svh;background:radial-gradient(ellipse at 50% 15%,#39204f88,transparent 55%),var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+button,textarea{font:inherit}
+#stars{position:fixed;inset:0;overflow:hidden;pointer-events:none}
+.star{position:absolute;width:2px;height:2px;border-radius:50%;background:white;opacity:.35;animation:twinkle 3s infinite alternate}
+@keyframes twinkle{to{opacity:.8;transform:scale(1.5)}}
+main{position:relative;width:min(100% - 30px,540px);min-height:100vh;min-height:100svh;margin:auto;display:flex;align-items:center;padding:35px 0}
+.screen{display:none;width:100%;animation:appear .4s ease}
+.screen.active{display:block}
+@keyframes appear{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.eyebrow{text-align:center;color:var(--purple);font-size:11px;letter-spacing:4px;font-weight:700;margin-bottom:28px}
+.center{text-align:center}
+h1{font-size:clamp(45px,12vw,65px);letter-spacing:-3px;margin:0 0 20px}
+h2{font-size:clamp(25px,7vw,35px);line-height:1.25;letter-spacing:-1px;margin:0 0 14px}
+.intro{max-width:360px;margin:0 auto 30px;color:var(--muted);font-size:15px;line-height:1.9}
+.button{border:1px solid #c49aff66;background:linear-gradient(135deg,#a978e6,#7047a8);color:white;border-radius:13px;padding:16px 22px;min-height:52px;font-size:12px;letter-spacing:2px;font-weight:750;cursor:pointer}
+.secondary{background:#ffffff08;border-color:var(--line)}
+.footer{color:#82738f;text-align:center;font-size:10px;letter-spacing:3px;margin-top:38px}
+.topline{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:22px}
+.topline .eyebrow{margin:0;text-align:left;font-size:9px;letter-spacing:2px}
+.count{font-size:10px;color:var(--muted);white-space:nowrap}
+.progress{height:3px;background:#ffffff16;border-radius:10px;overflow:hidden;margin-bottom:25px}
+#progressFill{height:100%;width:10%;background:linear-gradient(90deg,#8052bc,#e0c4ff);transition:width .3s}
+.card{padding:clamp(20px,6vw,32px);background:#191127eF;border:1px solid var(--line);border-radius:22px;box-shadow:0 20px 65px #0005}
+.qnum{color:var(--purple);font-size:10px;letter-spacing:3px;margin-bottom:17px}
+.arabic{direction:rtl;text-align:right;color:#c6a9ed;line-height:1.9;font-size:14px;margin:0 0 25px}
+label{display:block;font-size:10px;letter-spacing:2px;color:#b8abc9;margin-bottom:10px}
+textarea{width:100%;min-height:145px;resize:vertical;border-radius:13px;border:1px solid #694e83;background:#0d0915;color:white;padding:15px;line-height:1.7;font-size:15px;outline:none}
+textarea:focus{border-color:var(--purple)}
+textarea::placeholder{color:#786c88}
+.meta{display:flex;justify-content:space-between;gap:8px;color:#8f819f;font-size:10px;margin-top:9px}
+.error{color:#ffb9d1;font-size:12px;min-height:17px;margin:9px 0 0}
+.actions{display:flex;gap:10px;margin-top:17px}
+.actions button{flex:1}
+.tiny{font-size:11px;line-height:1.8;color:#92849f}
+.envelope-button{position:relative;display:block;width:min(100%,300px);height:190px;margin:28px auto;border:0;background:transparent;cursor:pointer}
+.envelope{position:absolute;inset:25px 0 0;border-radius:10px;background:linear-gradient(145deg,#8054ae,#38204f);border:1px solid #d7b8f966;box-shadow:0 20px 50px #0005}
+.envelope:before,.envelope:after{content:"";position:absolute;bottom:0;width:0;height:0;border-top:105px solid transparent;z-index:2}
+.envelope:before{left:0;border-left:150px solid #704696}
+.envelope:after{right:0;border-right:150px solid #59347d}
+.flap{position:absolute;top:25px;left:0;width:100%;height:110px;background:#a67ad1;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .6s;z-index:3}
+.seal{position:absolute;z-index:4;left:50%;top:92px;transform:translateX(-50%);width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#e4c8ff;color:#583279;font-size:22px;transition:opacity .2s}
+.opened .flap{transform:rotateX(180deg)}
+.opened .seal{opacity:0}
+.letter{display:none;white-space:pre-wrap;text-align:left;line-height:1.95;background:#191127;border:1px solid var(--line);border-radius:18px;padding:23px;font-size:15px}
+.letter.show{display:block}
+.letter-title{font-size:10px;letter-spacing:3px;color:var(--purple);margin-bottom:18px}
+@media(max-width:380px){.actions{flex-direction:column-reverse}.actions button{width:100%}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style>
 </head>
-
 <body>
-  <div class="stars" id="stars"></div>
+<div id="stars" aria-hidden="true"></div>
+<main>
+<section class="screen active center" id="welcome">
+<div class="eyebrow">JUST BETWEEN US</div>
+<h1>Hey, you.</h1>
+<p class="intro">I have a few things I’ve been wanting to ask you.<br>Take your time. There’s no right or wrong answer.</p>
+<button class="button" id="begin">LET'S BEGIN ↗</button>
+<div class="footer">TAKE YOUR TIME</div>
+</section>
 
-  <main class="screen">
-    <p class="eyebrow">JUST BETWEEN US</p>
+<section class="screen" id="questions">
+<div class="topline"><div class="eyebrow">JUST BETWEEN US</div><div class="count" id="count">QUESTION 01 / 10</div></div>
+<div class="progress"><div id="progressFill"></div></div>
+<div class="card">
+<div class="qnum" id="qnum">QUESTION 01</div>
+<h2 id="questionTitle"></h2>
+<p class="arabic" id="questionArabic" lang="ar"></p>
+<label for="answer">YOUR ANSWER</label>
+<textarea id="answer" maxlength="2000" placeholder="Write whatever comes to your mind..."></textarea>
+<div class="meta"><span>Take your time. Write from the heart.</span><span id="charCount">0 / 2000</span></div>
+<p class="error" id="error" role="status"></p>
+<div class="actions"><button class="button secondary" id="back">BACK</button><button class="button" id="done">DONE ↗</button></div>
+</div>
+<p class="tiny center" style="text-align:center;margin-top:17px">Your words matter.</p>
+</section>
 
-    <h1>
-      Hey,<br>
-      <span>you.</span>
-    </h1>
+<section class="screen center" id="transition">
+<div class="eyebrow">JUST BETWEEN US</div>
+<h2>Thank you for answering.</h2>
+<p class="intro">There’s one last thing I wanted you to see.</p>
+<button class="button" id="toEnvelope">ONE LAST THING ↗</button>
+</section>
 
-    <p class="intro">
-      I have a few things I’ve been wanting to ask you.
-      <br><br>
-      Take your time. There’s no right or wrong answer.
-    </p>
+<section class="screen center" id="surprise">
+<div class="eyebrow">A LITTLE SOMETHING FOR YOU</div>
+<h2>One last thing...</h2>
+<p class="intro">I saved these words just for you.<br>Tap the envelope to open it.</p>
+<button class="envelope-button" id="envelope" aria-label="Open the letter"><span class="envelope"></span><span class="flap"></span><span class="seal">♡</span></button>
+<article class="letter" id="letter">
+<div class="letter-title">JUST BETWEEN US</div>
+<p id="letterBody">Hey, my love.
 
-    <button id="startButton">
-      LET'S BEGIN ↗
-    </button>
+There’s so much I want you to know, and sometimes it’s hard to fit it all into one message. I’m really glad you’re in my life, and I hope this little page made you smile.
 
-    <p class="footer">TAKE YOUR TIME</p>
-  </main>
+Thank you for being you, for the moments we share, and for letting me know you a little more through your answers.
 
-  <script>
-    const stars = document.getElementById("stars");
+No matter how ordinary a day is, talking to you can make it feel special.
 
-    for (let i = 0; i < 45; i++) {
-      const star = document.createElement("span");
-
-      star.className = "star";
-      star.textContent = Math.random() > 0.5 ? "✦" : "·";
-      star.style.left = Math.random() * 100 + "%";
-      star.style.top = Math.random() * 100 + "%";
-      star.style.fontSize = (8 + Math.random() * 12) + "px";
-      star.style.animationDelay = Math.random() * 3 + "s";
-
-      stars.appendChild(star);
-    }
-
-    document
-      .getElementById("startButton")
-      .addEventListener("click", () => {
-        alert(
-          "We're just getting started. ✨"
-        );
-      });
-  </script>
+With all my love,
+Zein ♡</p>
+</article>
+<p class="tiny">Made with care, just for you.</p>
+</section>
+</main>
+<script>
+const questions=[
+["What do you love most about our relationship?","إيه أكتر حاجة بتحبيها في علاقتنا؟"],
+["What's your favorite thing about me?","إيه أكتر حاجة بتحبيها فيا؟"],
+["When do you feel the closest to me?","إمتى بتحسي إنك أقرب ليا؟"],
+["What's a moment with me that you'll always remember?","إيه موقف بينا هيفضل في ذاكرتك دايمًا؟"],
+["What's something I do that makes you feel loved?","إيه حاجة بعملها وبتخليكي تحسي بحبي ليكي؟"],
+["If you could relive one moment with me, which one would it be?","لو تقدري تعيشي لحظة واحدة بينا من جديد، هتختاري أنهي لحظة؟"],
+["What's something you've always wanted us to do together?","إيه حاجة نفسك نعملها مع بعض من زمان؟"],
+["What do you hope our relationship will look like in the future?","بتتمني علاقتنا تبقى عاملة إزاي في المستقبل؟"],
+["What's one thing you never want us to lose?","إيه حاجة واحدة عمرك ما تحبي نخسرها في علاقتنا؟"],
+["If you could tell me one thing from the bottom of your heart, what would it be?","لو تقدري تقوليلي حاجة واحدة من أعماق قلبك، هتكون إيه؟"]
+];
+const answers=Array(questions.length).fill("");
+let current=0;
+const $=id=>document.getElementById(id);
+function screen(id){document.querySelectorAll(".screen").forEach(s=>s.classList.toggle("active",s.id===id));window.scrollTo({top:0,behavior:"smooth"})}
+function render(){
+$("count").textContent=`QUESTION ${String(current+1).padStart(2,"0")} / 10`;
+$("qnum").textContent=`QUESTION ${String(current+1).padStart(2,"0")}`;
+$("questionTitle").textContent=questions[current][0];
+$("questionArabic").textContent=questions[current][1];
+$("progressFill").style.width=((current+1)/questions.length*100)+"%";
+$("answer").value=answers[current];
+$("charCount").textContent=answers[current].length+" / 2000";
+$("back").style.visibility=current===0?"hidden":"visible";
+$("done").textContent=current===9?"FINISH ↗":"DONE ↗";
+$("error").textContent="";
+screen("questions");
+}
+$("begin").onclick=render;
+$("answer").addEventListener("input",()=>{answers[current]=$("answer").value;$("charCount").textContent=$("answer").value.length+" / 2000";$("error").textContent=""});
+$("done").onclick=()=>{
+const value=$("answer").value.trim();
+if(!value){$("error").textContent="Write your answer first, then tap DONE.";return}
+answers[current]=value;
+if(current<questions.length-1){current++;render()}else{screen("transition")}
+};
+$("back").onclick=()=>{answers[current]=$("answer").value;if(current>0){current--;render()}};
+$("toEnvelope").onclick=()=>screen("surprise");
+$("envelope").onclick=()=>{$("envelope").classList.add("opened");$("letter").classList.add("show");$("envelope").setAttribute("aria-label","Letter opened");$("letter").scrollIntoView({behavior:"smooth",block:"start"})};
+for(let i=0;i<48;i++){const s=document.createElement("span");s.className="star";s.style.left=Math.random()*100+"%";s.style.top=Math.random()*100+"%";s.style.animationDelay=Math.random()*4+"s";s.style.animationDuration=2.5+Math.random()*4+"s";$("stars").appendChild(s)}
+</script>
 </body>
 </html>
