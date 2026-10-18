@@ -25,6 +25,7 @@ main{position:relative;width:min(100% - 30px,540px);min-height:100vh;min-height:
 h1{font-size:clamp(45px,12vw,65px);letter-spacing:-3px;line-height:1.05;margin:0 0 20px}
 h2{font-size:clamp(25px,7vw,35px);line-height:1.25;letter-spacing:-1px;margin:0 0 14px}
 .intro{max-width:390px;margin:0 auto 30px;color:var(--muted);font-size:15px;line-height:1.9}
+.from-to{color:var(--purple);font-size:10px;letter-spacing:4px;font-weight:700;margin:0 0 22px}
 .button{border:1px solid #c49aff66;background:linear-gradient(135deg,#a978e6,#7047a8);color:white;border-radius:13px;padding:16px 22px;min-height:52px;font-size:12px;letter-spacing:2px;font-weight:750;cursor:pointer;transition:transform .2s,opacity .2s}
 .button:active{transform:scale(.98)}
 .secondary{background:#ffffff08;border-color:var(--line)}
@@ -70,10 +71,10 @@ textarea::placeholder{color:#786c88}
 </head>
 <body>
 <div id="stars" aria-hidden="true"></div>
-
 <main>
 <section class="screen active center" id="welcome">
   <div class="eyebrow">A LITTLE SOMETHING FOR YOU</div>
+  <p class="from-to">FROM ZAIN TO MARYAM ♡</p>
   <h1>Just<br>Between Us<span style="color:var(--purple)">.</span></h1>
   <p class="intro">A little space for us, for the things we feel, the moments we remember, and the words we don't always know how to say. ♡</p>
   <button class="button" id="start">LET'S BEGIN ♡</button>
@@ -120,13 +121,11 @@ textarea::placeholder{color:#786c88}
     </button>
     <span class="envelope-label">A LETTER FOR YOU</span>
   </div>
-
   <article class="letter" id="letter">
     <div class="letter-title">JUST BETWEEN US ♡</div>
     <p id="letterBody" lang="ar">مريم انت بجد حد فارقلي اوي و بحبك جدا نفسي اننا ندوم لبعض بحب اوي الوقت اللي بنتكلم فيه مع بعض برغم اننا اخر فترة مش بنتكلم كتير بس برضو مازالت النوتفيكيشن بتاعتك بالنسبالي مختلفة و بحس بشعور داخلي كده والله مش عارف اوصفه بأيه انا طول اليوم بفكر فيكي و قبل ما انام و قبل ما اصحي برضو بالنسبالي والله ببدا بيكي اليوم و بنهيه بيكي برضو عمري ما حسيت او فكرت ف اني عايز ابعد بجد و اني مبقتش حملك ولا اني عايزك ف حياتي بسبب كام موقف عملتيه ممكن يحسسك اني اتقفلت منك بس عمري ما حسيت واحد ف الميه اني مبقتش عايزك او اني افكر ف اني اختارت فعلا صح ولا لا انا بنسي كل ده عشان كل اللي بينا و اني فعلا مش عايز اخسرك و مش بعرف ازعل منك فترك كبيره بس عمر ما مكانتك عندي هتتغير و هتفضلي زي ما انت بالنسبالي لما يجيلي نوتفيكيشن منك اي كان مشغول او بكلم حد بسيبه و بكلمك لان كل اللي فارقلي هو انت و مش بكون حابب اني اكلم اي حد طول ما انت موجوده انا بجد نفسي تدومي في حياتي و نكمل مع بعض و نفضل قريبين من بعض و نعيش لحظات كتير حلوه سوا و افضل اشوفك جزء من ايامي مهما الوقت عدى و مهما حاجات كتير اتغيرت حوالينا انا عارف ان مش كل الفترات هتبقى زي بعض و ان ممكن ننشغل او نبقى مشغولين عن بعض ساعات بس نفسي مهما حصل مننساش احنا بنحب بعض قد ايه و نفضل نحاول عشان بعض و نفهم بعض و نكون موجودين لبعض
 انا مش عايز منك اي حاجه غير انك تكوني مرتاحة معايا و تبقي عارفه ان ليكي مكانه عندي محدش يقدر ياخدها و انك فارقة معايا بجد لانك شخص جميل والله و تتحبي جدا عشان كده بغير عليكي بزيادة ياريت نفضل متفاهمين طول الوقت مع بعض و نسمع بعض قبل ما نحكم او اي حاجه و نفضل مع بعض كويسين مش مثلا افكر كذا مره قبل ما اخش اقولك حاجه بسبب اني مش متوقع ردة فعلك انا عمري ما عملت كده بس بحس انك بتترددي كتير معايا و عايزك تكوني متطمنه اني عمري ما هتغير معاكي ولا هقلب عليكي و ربنا يديمك ليا بحبك اوي يامريومم</p>
   </article>
-
   <div class="final-button-wrap">
     <button class="button" id="finalButton" type="button" style="display:none">ONE LAST THING 💌</button>
   </div>
@@ -140,7 +139,7 @@ textarea::placeholder{color:#786c88}
     You've made it to the end, my love. ♡<br><br>
     Every answer you wrote means something to me, because it's a little piece of your heart that you're sharing with me. I wanna read every single word, so after you copy your answers, send them to me, okay? I can't wait to see what's in that pretty mind of yours. 💌
   </p>
-  <button class="button" id="copyAnswers" type="button">COPY MY ANSWERS 💌</button>
+  <button class="button" id="copyAnswers" type="button">COPY YOUR ANSWERS 💌</button>
   <p class="tiny center" id="copyStatus" role="status" aria-live="polite">Copy them and send them to me, my love. ♡</p>
   <button class="button secondary" id="showAnswers" type="button">SHOW ANSWERS</button>
   <textarea id="answersCopyBox" readonly aria-label="All questions and answers"></textarea>
@@ -150,7 +149,6 @@ textarea::placeholder{color:#786c88}
 
 <script>
 const $ = id => document.getElementById(id);
-
 const questions = [
   ["What do you love most about our relationship?","إيه أكتر حاجة بتحبيها في علاقتنا؟"],
   ["What's your favorite thing about me?","إيه أكتر حاجة بتحبيها فيا؟"],
@@ -163,7 +161,6 @@ const questions = [
   ["What's one thing you never want us to lose?","إيه حاجة واحدة عمرك ما تحبي نخسرها في علاقتنا؟"],
   ["If you could tell me one thing from the bottom of your heart, what would it be?","لو تقدري تقوليلي حاجة واحدة من أعماق قلبك، هتكون إيه؟"]
 ];
-
 const answers = Array(questions.length).fill("");
 let current = 0;
 
@@ -245,13 +242,12 @@ $("copyAnswers").onclick=async()=>{
   const text=buildAnswersText();
   const status=$("copyStatus");
   const box=$("answersCopyBox");
-
   try{
     if(!navigator.clipboard||!navigator.clipboard.writeText){
       throw new Error("Clipboard unavailable");
     }
     await navigator.clipboard.writeText(text);
-    status.textContent="Copied successfully! 💜 Now send them to Zein.";
+    status.textContent="Copied successfully! 💜 Now send them to Zain.";
   }catch(error){
     box.style.display="block";
     box.value=text;
